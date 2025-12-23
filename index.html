@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weryfikacja | 𝑺𝒘𝒊𝒓𝑯𝒖𝒃</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS: PREMIUM AESTHETIC --- */
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #00ff88;
+            --glass: rgba(255, 255, 255, 0.07);
+            --border: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top right, #1a1a2e, #16213e, #0f3460);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Animowane tło w kółka */
+        .bg-circles {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: move 15s infinite alternate;
+        }
+
+        .c1 { width: 300px; height: 300px; top: -10%; left: 10%; }
+        .c2 { width: 400px; height: 400px; bottom: -5%; right: 5%; animation-delay: -5s; }
+
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 50px); }
+        }
+
+        /* Główna Karta */
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h1 span {
+            color: var(--accent);
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        /* Sekcja Zasad */
+        .rules-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 35px;
+            text-align: left;
+            border-left: 4px solid var(--primary);
+        }
+
+        .rules-container h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rules-container ul {
+            list-style: none;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .rules-container li::before {
+            content: "✦";
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* Przycisk */
+        .btn-verify {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(106, 17, 203, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-verify:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(106, 17, 203, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .btn-verify:active { transform: translateY(-1px); }
+
+        /* Statusy */
+        #status-box {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            min-height: 20px;
+        }
+
+        .success-text { color: var(--accent); font-weight: bold; animation: glow 1.5s infinite; }
+        
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-circles">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+    </div>
+
+    <div class="card">
+        <h1>Witaj w <span>𝑺𝒘𝒊𝒓𝑯𝒖𝒃</span></h1>
+        <p class="subtitle">Zaloguj się, aby potwierdzić tożsamość i odebrać rangę.</p>
+
+        <div class="rules-container">
+            <h3>Zasady serwera</h3>
+            <ul>
+                <li>Szanuj innych użytkowników</li>
+                <li>Zakaz spamu i reklamowania innych serwerów</li>
+                <li>Pamiętaj o kulturze na czatach głosowych</li>
+            </ul>
+        </div>
+
+        <button class="btn-verify" id="mainBtn" onclick="handleAuth()">
+            Weryfikacja
+        </button>
+
+        <div id="status-box"></div>
+
+        <div class="footer">
+            SYSTEM WERYFIKACJI 𝑺𝒘𝒊𝒓𝑯𝒖𝒃 &copy; 2025
+        </div>
+    </div>
+
+    <script>
+        // Sprawdzanie statusu w URL (zwracanego przez Pythona)
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const btn = document.getElementById('mainBtn');
+            const statusBox = document.getElementById('status-box');
+
+            if (status === 'success') {
+                btn.style.display = 'none';
+                statusBox.innerHTML = '<span class="success-text">✔ ZWERYFIKOWANO POMYŚLNIE! RANGA NADANA.</span>';
+            } else if (status === 'error') {
+                statusBox.innerHTML = '<span style="color: #ff4d4d;">✖ BŁĄD WERYFIKACJI. SPRÓBUJ PONOWNIE.</span>';
+            }
+        };
+
+        function handleAuth() {
+            const btn = document.getElementById('mainBtn');
+            btn.innerHTML = 'Łączenie...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            // Przekierowanie do endpointu w Pythonie
+            setTimeout(() => {
+                window.location.href = '/login';
+            }, 800);
+        }
+    </script>
+</body>
+</html>
